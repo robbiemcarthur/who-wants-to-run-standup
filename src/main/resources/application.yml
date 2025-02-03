@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: user
+      password: password
   application:
     name: who-wants-to-run-standup
   datasource:
