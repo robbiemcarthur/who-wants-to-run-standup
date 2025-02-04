@@ -79,4 +79,18 @@ public class GameController {
         if (players.isEmpty()) return "No players available!";
         return players.get(random.nextInt(players.size()));
     }
+
+    @MessageMapping("/leave")
+    @SendTo("/topic/players")
+    public List<String> leaveGame(String username) {
+        activeUsers.remove(username);
+        return new ArrayList<>(activeUsers.keySet());
+    }
+
+    @MessageMapping("/clear-players")
+    @SendTo("/topic/players")
+    public List<String> clearPlayers() {
+        activeUsers.clear();
+        return new ArrayList<>(activeUsers.keySet());
+    }
 }
