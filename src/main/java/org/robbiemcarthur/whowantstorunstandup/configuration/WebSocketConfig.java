@@ -17,6 +17,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/game").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/game")
+                .setAllowedOrigins("https://who-wants-to-run-stand-up.netlify.app", "http://localhost:3000")
+                .withSockJS();
     }
 }
