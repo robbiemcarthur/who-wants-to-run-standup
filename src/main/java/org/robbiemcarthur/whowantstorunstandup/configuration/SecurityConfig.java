@@ -27,7 +27,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://who-wants-to-run-stand-up-svc-d9d35b0792e6.herokuapp.com","http://localhost:3000"));
+        configuration.setAllowedOrigins(List.of("https://who-wants-to-run-stand-up.netlify.app","http://localhost:3000"));
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
         configuration.setAllowCredentials(true);
