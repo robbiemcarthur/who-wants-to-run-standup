@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class PlayerService {
+public class SpinTheWheelService {
     private final PlayerRepository playerRepository;
 
-    public PlayerService(PlayerRepository playerRepository) {
+    public SpinTheWheelService(PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
 

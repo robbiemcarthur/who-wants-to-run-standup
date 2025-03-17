@@ -9,10 +9,10 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class PlayerServiceTest {
+class SpinTheWheelServiceTest {
 
     private final PlayerRepository repository = mock(PlayerRepository.class);
-    private final PlayerService service = new PlayerService(repository);
+    private final SpinTheWheelService service = new SpinTheWheelService(repository);
 
     @Test
     void should_AddUser_AndReturnAllPlayers() {
