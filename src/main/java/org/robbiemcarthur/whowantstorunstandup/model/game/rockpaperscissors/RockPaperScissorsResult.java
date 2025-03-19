@@ -16,8 +16,8 @@ public record RockPaperScissorsResult(
         if ((move1.equals("rock") && move2.equals("scissors")) ||
                 (move1.equals("scissors") && move2.equals("paper")) ||
                 (move1.equals("paper") && move2.equals("rock"))) {
-            return player1 + " Wins!";
+            return player1;
         }
-        return player2 + " Wins!";
+        return player2;
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class GameController {
+
     private final WebSocketService webSocketService;
 
     public GameController(WebSocketService webSocketService) {
