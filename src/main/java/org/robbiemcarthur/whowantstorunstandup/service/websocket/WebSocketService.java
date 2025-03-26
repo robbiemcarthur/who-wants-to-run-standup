@@ -3,6 +3,7 @@ package org.robbiemcarthur.whowantstorunstandup.service.websocket;
 import lombok.RequiredArgsConstructor;
 import org.robbiemcarthur.whowantstorunstandup.model.game.rockpaperscissors.RockPaperScissorsResult;
 import org.robbiemcarthur.whowantstorunstandup.model.game.rockpaperscissors.RockPaperScissorsMoveRequest;
+import org.robbiemcarthur.whowantstorunstandup.repository.PlayerRepository;
 import org.robbiemcarthur.whowantstorunstandup.service.RockPaperScissorsService;
 import org.robbiemcarthur.whowantstorunstandup.service.SpinTheWheelService;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -17,6 +18,7 @@ public class WebSocketService {
     private final SimpMessagingTemplate messagingTemplate;
     private final RockPaperScissorsService gameService;
     private final SpinTheWheelService spinTheWheelService;
+    private final PlayerRepository playerRepository;
 
     public void handleRockPaperScissorsMove(RockPaperScissorsMoveRequest rockPaperScissorsMoveRequest) {
         RockPaperScissorsResult result = gameService.move(rockPaperScissorsMoveRequest);
@@ -42,6 +44,11 @@ public class WebSocketService {
 
     public void handleSpinTheWheel() {
         String winner = spinTheWheelService.spinWheel();
-        messagingTemplate.convertAndSend("/topic/game-results", winner);
+        messagingTemplate.convertAndSend("/topic/wheel-results", winner);
+    }
+
+    public void handleGetPlayers() {
+        Set<String> allPlayers = playerRepository.findAllPlayers();
+        messagingTemplate.convertAndSend("/topic/players", allPlayers);
     }
 }

@@ -40,4 +40,9 @@ public class GameController {
     public void clearPlayers() {
         webSocketService.handleClearPlayers();
     }
+
+    @MessageMapping("/initial-players")
+    public void initialPlayers() {
+        webSocketService.handleGetPlayers();
+    }
 }
