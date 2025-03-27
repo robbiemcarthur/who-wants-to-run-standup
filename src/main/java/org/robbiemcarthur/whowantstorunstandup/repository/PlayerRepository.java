@@ -20,13 +20,11 @@ public class PlayerRepository {
         activeUsers.put("Craig D", "Craig D");
         activeUsers.put("Craig H", "Craig H");
         activeUsers.put("Declan", "Declan");
-        activeUsers.put("Gayathri", "Gayathri");
         activeUsers.put("Joao", "Joao");
         activeUsers.put("Liam", "Liam");
         activeUsers.put("Mark", "Mark");
         activeUsers.put("Ritika", "Ritika");
         activeUsers.put("Tarannum", "Tarannum");
-        activeUsers.put("Tripati", "Tripati");
         activeUsers.put("Viswanth", "Viswanth");
     }
 
